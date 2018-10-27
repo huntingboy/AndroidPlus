@@ -6,9 +6,11 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import butterknife.ButterKnife;
 import dagger.android.support.DaggerAppCompatActivity;
@@ -32,6 +34,40 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
 
     protected abstract int getLayoutResId();
 
+    protected void postDelay(Runnable runnable, long delayMillis) {
+        if (mHandler == null) {
+            mHandler = new Handler();
+        }
+        mHandler.postDelayed(runnable, delayMillis);
+    }
+
+    public void navigateForResultTo(Class to, int requestCode) {
+        Intent intent = new Intent(this, to);
+        startActivityForResult(intent, requestCode);
+    }
+
+    protected void navigateTo(Class to) {
+        startActivity(new Intent(this, to));
+        finish();
+    }
+
+    protected void hideSoftKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        if (getCurrentFocus() != null) {
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
+    }
+
     /**
      * 将状态栏背景颜色设置为透明
      */
@@ -46,15 +82,11 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
         }
     }
 
-    protected void postDelay(Runnable runnable, long delayMillis) {
-        if (mHandler == null) {
-            mHandler = new Handler();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
         }
-        mHandler.postDelayed(runnable, delayMillis);
-    }
-
-    protected void navigateTo(Class to) {
-        startActivity(new Intent(this, to));
-        finish();
     }
 }

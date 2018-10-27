@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">AndroidPlus</string>
+    <string name="user_name">username</string>
+    <string name="password">password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="register">register</string>
+    <string name="registering">registering…</string>
+    <string name="login">login</string>
+    <string name="logining">logining…</string>
+    <string name="error_user_name_empty">Username empty</string>
+    <string name="error_user_name">Invalid user name</string>
+    <string name="error_password_empty">Password empty</string>
+    <string name="error_password">Invalid password. At least six characters or digits.</string>
+    <string name="login_success">login success</string>
+    <string name="login_failed">login failed</string>
+    <string name="user_name_password_not_match">username password not match</string>
+    <string name="user_name_does_not_exist">username does not exist</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.nomad.androidplus.di.model;
+package com.nomad.androidplus.data.model;
 
 import com.avos.avoscloud.AVClassName;
 import com.avos.avoscloud.AVUser;

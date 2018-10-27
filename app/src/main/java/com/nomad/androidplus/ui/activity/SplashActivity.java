@@ -1,11 +1,8 @@
 package com.nomad.androidplus.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import com.avos.avoscloud.AVUser;
 import com.nomad.androidplus.R;
-import com.nomad.androidplus.di.model.User;
+import com.nomad.androidplus.data.model.User;
 
 public class SplashActivity extends BaseActivity {
 
@@ -30,7 +27,12 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void navigateToLoginActivity() {
-
+        postDelay(new Runnable() {
+            @Override
+            public void run() {
+                navigateTo(LoginActivity.class);
+            }
+        }, DELAY_TIME);
     }
 
     private void navigateToMainActivity() {
