@@ -50,4 +50,5 @@ ext {
     butterknifeVersion = '8.8.1'
     daggerVersion = '2.18'
     avoscloudVersion = 'v4.7.3'
+    eventbusVersion='3.1.1'
 }

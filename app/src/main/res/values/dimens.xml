@@ -2,7 +2,7 @@
 <resources>
     <dimen name="layout_margin">10dp</dimen>
     <dimen name="layout_marginTop">50dp</dimen>
-    <dimen name="text_size">50sp</dimen>
+    <dimen name="text_size">20sp</dimen>
     <dimen name="padding">16dp</dimen>
     <dimen name="layout_marginBottom">8dp</dimen>
     <dimen name="layout_marginLeft">8dp</dimen>

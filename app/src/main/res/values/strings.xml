@@ -15,4 +15,13 @@
     <string name="login_failed">login failed</string>
     <string name="user_name_password_not_match">username password not match</string>
     <string name="user_name_does_not_exist">username does not exist</string>
+    <string name="register_success">register success</string>
+    <string name="register_failed">register failed</string>
+    <string name="user_name_taken">username taken</string>
+    <string name="error_confirm_password">not equal password</string>
+    <string name="slogan">use heart to create beautiful world</string>
+    <string name="add_question">add question</string>
+    <string name="home">home</string>
+    <string name="article">article</string>
+    <string name="me">me</string>
 </resources>

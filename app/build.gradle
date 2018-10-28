@@ -16,10 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     implementation "com.android.support:design:$supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
@@ -29,8 +30,11 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
 
     //butterknife
+
     //注解方式bindview,onclick事件(集)
+
     //在fragment中使用要手动unbind
+
     //在library中使用用R2,同时apply plugin ***
     implementation "com.jakewharton:butterknife:$butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
@@ -38,6 +42,7 @@ dependencies {
     //依赖注入dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
     //dagger-android
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
@@ -45,4 +50,10 @@ dependencies {
 
     // LeanCloud 基础包
     implementation "cn.leancloud.android:avoscloud-sdk:$avoscloudVersion"
+
+    //eventbus 事件的订阅和发布
+    implementation "org.greenrobot:eventbus:$eventbusVersion"
+    annotationProcessor "org.greenrobot:eventbus-annotation-processor:$eventbusVersion"
+    
+
 }
